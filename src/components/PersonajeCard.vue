@@ -1,6 +1,6 @@
 <template>
   <article class="card" :aria-label="`Personaje: ${nombre}`" role="region">
-    <img :src="imagen" :alt="`Imagen de ${nombre}`" class="card__img" />
+    <img :src="imagen" :alt="`Imagen de ${nombre}`" class="card__img" loading="lazy" />
     <h2 class="card__name">{{ nombre }}</h2>
     <p class="card__desc">{{ descripcion }}</p>
   </article>
@@ -11,7 +11,7 @@ export default {
   props: {
     nombre: { type: String, required: true },
     descripcion: { type: String, required: true },
-    imagen: { type: String, required: false }
+    imagen: { type: String, required: true }
   }
 }
 </script>

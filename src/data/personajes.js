@@ -33,4 +33,4 @@ export default {
   ]
 }
 // Personajes y sus datos para el componente HomeView.vue
-// EN LA SIGUIENTE VERSION SE ELIGIRÁN MEJORES IMG sin fondo :c 
+// EN LA SIGUIENTE VERSION SE ELIGIRÁN MEJORES IMG sin fondo :c (SOLUCIONADO*)

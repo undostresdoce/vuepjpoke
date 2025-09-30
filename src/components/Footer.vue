@@ -9,9 +9,10 @@
         class="footer__link"
         aria-label="Ir al perfil de GitHub de Cvmi"
       >
-        Cvmi ❤
+        Cvmi 💫
       </a>
     </p>
+    <p>¡Pokémon ゲット da ze!</p>
   </footer>
 </template>
 

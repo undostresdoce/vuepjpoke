@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// Importamos la vista principal y el footer
 import HomeView from './views/HomeView.vue'
 import Footer from './components/Footer.vue'
 
