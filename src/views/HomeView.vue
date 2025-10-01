@@ -2,6 +2,11 @@
   <main class="home">
     <h1 class="home__title">Lista de Personajes</h1>
 
+    <div v-if="mostrarAlerta" class="home__alert" role="alert">
+      <span>Bienvenida, Camila. El componente se ha cargado correctamente.</span>
+      <button @click="cerrarAlerta" class="home__alert-close" aria-label="Cerrar alerta">×</button>
+    </div>
+
     <input
       type="text"
       v-model="busqueda"
@@ -36,7 +41,7 @@
     </transition-group>
 
     <p v-if="personajesFiltrados.length === 0" class="home__no-result">
-      El pokémon que desea buscar no existe.
+      El pokémon que deseas buscar no existe.
     </p>
   </main>
 </template>
@@ -52,7 +57,8 @@ export default {
       personajes: personajesData.personajes,
       busqueda: '',
       tipoSeleccionado: '',
-      ordenAscendente: true
+      ordenAscendente: true,
+      mostrarAlerta: true
     }
   },
   computed: {
@@ -89,7 +95,13 @@ export default {
   methods: {
     invertirOrden() {
       this.ordenAscendente = !this.ordenAscendente
+    },
+    cerrarAlerta() {
+      this.mostrarAlerta = false
     }
+  },
+  mounted() {
+    console.log('Componente HomeView está OK :)')
   }
 }
 </script>
@@ -104,6 +116,26 @@ export default {
   margin-bottom: 1rem;
   color: #ef5350;
   text-align: center;
+}
+.home__alert {
+  background-color: #ffcb05;
+  color: #2a75bb;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.home__alert-close {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #2a75bb;
+  cursor: pointer;
 }
 .home__search,
 .home__filter {
